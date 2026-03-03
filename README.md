@@ -1,21 +1,52 @@
-# LXR-Input
+# 🐺 LXR-Input — Advanced NUI Input System
 
-LXR-Input is an advanced NUI input system designed for the LXRCore framework. It provides a flexible way to create interactive forms that accept various input types such as text, numbers, radio buttons, checkboxes, and dropdown menus, all integrated within your RedM or FiveM server.
+```
+██╗     ██╗  ██╗██████╗        ██╗███╗   ██╗██████╗ ██╗   ██╗████████╗
+██║     ╚██╗██╔╝██╔══██╗      ██║████╗  ██║██╔══██╗██║   ██║╚══██╔══╝
+██║      ╚███╔╝ ██████╔╝█████╗██║██╔██╗ ██║██████╔╝██║   ██║   ██║   
+██║      ██╔██╗ ██╔══██╗╚════╝██║██║╚██╗██║██╔═══╝ ██║   ██║   ██║   
+███████╗██╔╝ ██╗██║  ██║      ██║██║ ╚████║██║     ╚██████╔╝   ██║   
+╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝      ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝    ╚═╝   
+```
 
-This resource is based on the **[NH Keyboard](https://forum.cfx.re/t/no-longer-supported-standalone-nerohiro-s-keyboard-dynamic-nui-keyboard-input/2506326)** created by **[NeroHiro](https://github.com/nerohiro)** but has been modified and optimized for LXRCore.
+> 🐺 **The Land of Wolves** — Advanced NUI Input System for RedM
+
+═══════════════════════════════════════════════════════════════════════════════
+
+**Server:**    The Land of Wolves 🐺  
+**Developer:** iBoss21 / The Lux Empire  
+**Website:**   https://www.wolves.land  
+**Discord:**   https://discord.gg/CrKcWdfd3A  
+**Store:**     https://theluxempire.tebex.io  
+
+═══════════════════════════════════════════════════════════════════════════════
+
+LXR-Input is an advanced NUI input system designed for the **LXR-Core** framework (with RSG-Core, VORP Core, and Standalone support). It provides a flexible way to create interactive forms that accept various input types such as text, numbers, radio buttons, checkboxes, and dropdown menus, all integrated within your RedM server.
+
+This resource is based on the **[NH Keyboard](https://forum.cfx.re/t/no-longer-supported-standalone-nerohiro-s-keyboard-dynamic-nui-keyboard-input/2506326)** created by **[NeroHiro](https://github.com/nerohiro)** but has been rebranded and optimized for LXR-Core / wolves.land.
 
 ![image](https://user-images.githubusercontent.com/57848836/158486183-68c40a47-0bf3-44c4-b738-b80520de10da.png)
+
+## Framework Support
+
+| Framework   | Status       |
+|-------------|--------------|
+| LXR-Core    | ✅ Primary    |
+| RSG-Core    | ✅ Compatible |
+| VORP Core   | ✅ Compatible |
+| Standalone  | ✅ Fallback   |
 
 ## Features
 
 - **Highly Customizable**: Create forms with various input types.
-- **Multiple Input Types**: Supports text, number, radio, checkbox, and dropdown (select) input fields.
-- **Easy Integration**: Works seamlessly within your LXRCore-based scripts.
+- **Multiple Input Types**: Supports text, number, password, radio, checkbox, and dropdown (select) input fields.
+- **Easy Integration**: Works seamlessly within your LXR-Core-based scripts.
 - **Responsive UI**: Input forms are built using the NUI system, making them sleek and user-friendly.
+- **Resource Name Protection**: Built-in runtime guard to ensure the resource runs under the correct name.
 
 ## Example Usage
 
-Here’s an example of how to create a basic form that captures input values and prints them in the console:
+Here's an example of how to create a basic form that captures input values:
 
 ```lua
 RegisterCommand('testinput', function()
@@ -78,19 +109,30 @@ RegisterCommand('testinput', function()
 end, false)
 ```
 
-### Key Input Types:
-- **Text**: Free-text input.
-- **Number**: Only accepts numeric values.
-- **Radio**: Choose between exclusive options (like "Bill" or "Cash").
-- **Checkbox**: Multiple selection options (like taxes to include).
-- **Select**: A dropdown menu with multiple options to choose from.
+### Key Input Types
 
-## Integration
+| Type       | Description                                      |
+|------------|--------------------------------------------------|
+| `text`     | Free-text input field                            |
+| `number`   | Numeric-only input (0-9)                         |
+| `password` | Masked text input                                |
+| `radio`    | Exclusive single-choice options                  |
+| `checkbox` | Multiple-selection options                       |
+| `select`   | Dropdown menu with multiple options              |
 
-To integrate `lxr-input` into your server:
-1. Ensure the `lxr-input` resource is started in your `server.cfg`.
-2. Use the `ShowInput` function to create and display input forms in your scripts.
+## Installation
+
+1. Place the `lxr-input` folder in your server's `resources` directory.
+2. Ensure the resource is started in your `server.cfg`:
+   ```
+   ensure lxr-input
+   ```
+3. Use the `ShowInput` export in your scripts to display input forms.
+
+> ⚠️ The resource folder **must** be named `lxr-input` exactly. A runtime guard will throw an error if the name does not match.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+© 2026 iBoss21 / The Lux Empire | wolves.land | All Rights Reserved
+
+See the [LICENSE](LICENSE) file for details.
